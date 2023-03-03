@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", ready);
+        function ready() {
+          console.log("");
+          console.log("[window ready] : [start]");
+          console.log("");
+          var Url = location.href;
+          var Agent = navigator.userAgent.toLowerCase();
+          console.log("");
+          console.log("[window ready] : [접속 Url] : " + Url);
+          console.log("[window ready] : [접속 Agent] : " + Agent);
+          console.log("");
+          if((Agent.indexOf("kakao")>-1)||Agent.indexOf('instagram')>-1){
+            if (Agent.includes("kakao")){
+              location.href = 'kakaotalk://inappbrowser/close';
+            }
+            else if (Agent.includes("instagram")){
+              location.href = 'instagram://inappbrowser/close';
+            }
+            if (navigator.userAgent.match(/iPhone|iPad/i)) { 
+              console.log("");
+              console.log("[window ready] : [접속 모바일] : " + "[아이폰]");
+              console.log("");
+            }
+            else { 
+              console.log("");
+              console.log("[window ready] : [접속 모바일] : " + "[안드로이드]");
+              console.log("");
+              location.href = 'intent://' + location.href.replace(/https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
+            }
+          }
+        };
+      </script> -->
+
+      <!-- <script>
+        window.onload = function(){ 
+			alert(navigator.userAgent); 
+			document.write(navigator.userAgent); 
+		}
+      </script> -->
+
+    <script>
+//         var isTemporaryBrowser = false;
+
+
+// if (/iPhone|iPad/.test(navigator.userAgent)) {
+//   if (/Line|LineBrowser/.test(navigator.userAgent)) {
+//     isTemporaryBrowser = true;
+//   }
+// }
+
+// if (isTemporaryBrowser) {
+//   alert("임시 브라우저에서 접속한 것으로 간주합니다.");
+// } else {
+//   alert("일반 브라우저에서 접속한 것으로 간주합니다.");
+// }
+
+
+
+
+
+		window.onload = function(){
+		if(navigator.userAgent.match(/inapp|NAVER|KAKAOTALK|Snapchat|Line|WirtschaftsWoche|Thunderbird|Instagram|everytimeApp|WhatsApp|Electron|wadiz|AliApp|zumapp|iPhone(.*)Whale|Android(.*)Whale|kakaostory|band|twitter|DaumApps|DaumDevice\/mobile|FB_IAB|FB4A|FBAN|FBIOS|FBSS|SamsungBrowser\/[^1]/i)){
+			document.body.innerHTML = '';
+      // var chromeUrl = 'googlechrome://navigate?url=' + window.location.href;
+      
+			if(navigator.userAgent.match(/iPhone|iPad/i)){
+
+        // window.location.replace('googlechrome://www.apple.com');
+				location.href='ftp://index.html?_targeturl='+location.href;
+        // ftp://index.html/?_targeturl=http://192.168.31.175:5500/
+				// location.href='https://www.apple.com?_targeturl='+location.href;
+				// location.href='ftp://www.apple.com?_targeturl='+location.href;
+                // window.open("https://www.apple.com/safari/");
+                
+			}else{
+				location.href='intent://'+location.href.replace(/https?:\/\//i,'')+'#Intent;scheme=http;package=com.android.chrome;end';
+			}
+		}
+	}
+
+
+
+//   if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+//   if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MSafariShowReader) {
+//     var confirmResult = confirm("현재 페이지는 임시창에서 열렸습니다. 사파리 브라우저로 이동하시겠습니까?");
+//     if (confirmResult) {
+//       window.location = document.URL;
+//     }
+//   }
+// }
+
+
+// if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+//   // 임시창이 열려있는지 확인합니다.
+//   if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MSafariShowReader) {
+//     alert("현재 페이지는 임시창에서 열렸습니다.");
+//   }else{
+//     alert("현재 페이지는 일반창에서 열렸습니다.");
+//   }
+// }
+
+
+//   if (/iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream) {
+//   var chromeUrl = 'googlechrome://navigate?url=' + window.location.href;
+//   var now = Date.now();
+
+//   // setTimeout(function () {
+//   //   if (Date.now() - now < 2000) {
+//   //     window.location.href = chromeUrl;
+//   //   }
+//   // }, 100);
+
+//   // window.location.href = 'googlechrome://';
+//   window.location.replace('googlechrome://');
+// }
+
+
+
+//   window.onload = function() {
+//   if(navigator.userAgent.match(/inapp|NAVER|KAKAOTALK|Snapchat|Line|WirtschaftsWoche|Thunderbird|Instagram|everytimeApp|WhatsApp|Electron|wadiz|AliApp|zumapp|iPhone(.*)Whale|Android(.*)Whale|kakaostory|band|twitter|DaumApps|DaumDevice\/mobile|FB_IAB|FB4A|FBAN|FBIOS|FBSS|SamsungBrowser\/[^1]/i)){
+//     document.body.innerHTML = '';
+//     if(navigator.userAgent.match(/iPhone|iPad/i)){
+//       location.href = 'https://example.com?_targeturl=' + encodeURIComponent(location.href);
+//     } else {
+//       location.href = 'https://example.com?_targeturl=' + encodeURIComponent(location.href);
+//     }
+//   }
+// }
+
+// window.onload = function(){
+//   if(navigator.userAgent.match(/inapp|NAVER|KAKAOTALK|Snapchat|Line|WirtschaftsWoche|Thunderbird|Instagram|everytimeApp|WhatsApp|Electron|wadiz|AliApp|zumapp|iPhone(.*)Whale|Android(.*)Whale|kakaostory|band|twitter|DaumApps|DaumDevice\/mobile|FB_IAB|FB4A|FBAN|FBIOS|FBSS|SamsungBrowser\/[^1]/i)){
+//     document.body.innerHTML = '';
+//     if(navigator.userAgent.match(/iPhone|iPad/i)){
+//       var ftpLink = document.createElement("a");
+//       ftpLink.href = "ftp://example.com/index.html?_targeturl="+location.href;
+//       ftpLink.target = "_blank";
+//       document.body.appendChild(ftpLink);
+//       ftpLink.click();
+//     } else {
+//       var ftpLink = document.createElement("a");
+//       ftpLink.href = "ftp://example.com/index.html?_targeturl="+location.href;
+//       ftpLink.target = "_blank";
+//       document.body.appendChild(ftpLink);
+//       ftpLink.click();
+//     }
+//   }
+// }
+
+// if(navigator.userAgent.match(/iPhone|iPad/i) && navigator.userAgent.match(/Safari/i)){
+//   var chromeLink = document.createElement("a");
+//   chromeLink.innerHTML = "이 링크는 크롬에서 더 잘 작동합니다. 크롬으로 이동하시겠습니까?";
+//   chromeLink.style.position = "fixed";
+//   chromeLink.style.top = 0;
+//   chromeLink.style.left = 0;
+//   chromeLink.style.backgroundColor = "#ccc";
+//   chromeLink.style.padding = "10px";
+//   chromeLink.style.zIndex = 9999;
+//   chromeLink.addEventListener("click", function(){
+//     location.href = "googlechrome://" + location.href;
+//   });
+//   document.body.appendChild(chromeLink);
+// }
+
+
+
+
+
+
+
+
+
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- <p>이 페이지는 크롬에서 더 잘 작동합니다. <a href="https://www.google.com/chrome/">크롬 다운로드</a></p> -->
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densityDpi=medium-dpi, viewport-fit=cover'>
+		<style>
+			html{font-family: sans-serif;}
+			body{padding:0;	margin:0; display: flex; align-items: center; position:fixed; width:100%; height:100%; overflow:auto; -webkit-overflow-scrolling: touch;
+			}
+			center{width:100%;}
+			b{font-size:2.2em;}
+		</style>
+		<script type='text/javascript'>
+			let target_url = location.href.split('?_targeturl=')[1];
+			window.onload = function(){
+				document.querySelector('.target').setAttribute('href',target_url);
+				setTimeout(function() {
+					window.open(target_url, "_self");
+				}, 1000);
+				
+			}
+		</script>
+	</head>
+<body>
+    <center>
+        <b>Safari로 이동합니다.</b><br /><br />
+        자동으로 이동되지 않을 경우 <a class='target'>여기</a>를 눌러주세요.
+    </center>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", ready);
+        function ready(){
+           console.log("[window ready] : [start]");
+           console.log("");
+            var Url = location.href;
+            var Agent = navigator.userAgent.toLowerCase();
+            console.log("");
+            console.log("[window ready] : [접속 Url] : " + Url);
+            console.log("[window ready] : [접속 Agent] : " + Agent);
+            console.log("");
+
+            if((Agent.indexOf("kakao")>-1)||Agent.indexOf('instagram')>-1){
+            if (Agent.includes("kakao")){
+            location.href = 'kakaotalk://inappbrowser/close';
+            }
+            else if (Agent.includes("instagram")){
+            location.href = 'instagram://inappbrowser/close';
+            }
+            if (navigator.userAgent.match(/iPhone|iPad/i)) {
+            console.log("");
+            console.log("[window ready] : [접속 모바일] : " + "[아이폰]");
+            console.log("");
+            }
+            else { 
+            console.log("");
+            console.log("[window ready] : [접속 모바일] : " + "[안드로이드]");
+            console.log("");
+            location.href = 'intent://' + location.href.replace(/https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
+            }
+        }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testRootKaKao</title>
+</head>
+<body>
+    <div>
+        <button onclick=ready()>Alpaca</button>
+    </div>
+</body>
+</html> -->

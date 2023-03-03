@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>임시창 여부 확인하기</title>
+    <meta charset="utf-8">
+    <script>
+        	window.onload = function(){
+		if(navigator.userAgent.match(/inapp|NAVER|KAKAOTALK|Snapchat|Line|WirtschaftsWoche|Thunderbird|Instagram|everytimeApp|WhatsApp|Electron|wadiz|AliApp|zumapp|iPhone(.*)Whale|Android(.*)Whale|kakaostory|band|twitter|DaumApps|DaumDevice\/mobile|FB_IAB|FB4A|FBAN|FBIOS|FBSS|SamsungBrowser\/[^1]/i)){
+			document.body.innerHTML = '';
+      // var chromeUrl = 'googlechrome://navigate?url=' + window.location.href;
+      
+			if(navigator.userAgent.match(/iPhone|iPad/i)){
+                // 현재 페이지의 URL을 FTP URL 형식으로 변환
+                var ftpUrl = 'ftp://' + window.location.host + '/www.apple.com';
+
+                // _targeturl 매개변수를 추가하여 FTP URL을 전달
+                var targetUrl = encodeURIComponent(window.location.href);
+                ftpUrl += '?_targeturl=' + targetUrl;
+
+                // FTP URL로 이동
+                window.location.href = ftpUrl;
+
+
+        // window.location.replace('googlechrome://www.apple.com');
+				// location.href='ftp://index.html?_targeturl='+location.href;
+        // ftp://index.html/?_targeturl=http://192.168.31.175:5500/
+				// location.href='https://www.apple.com?_targeturl='+location.href;
+				// location.href='ftp://www.apple.com?_targeturl='+location.href;
+                // window.open("https://www.apple.com/safari/");
+                
+			}else{
+				location.href='intent://'+location.href.replace(/https?:\/\//i,'')+'#Intent;scheme=http;package=com.android.chrome;end';
+			}
+		}
+	}
+
+        
+    //   if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    //     if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MSafariShowReader) {
+    //       alert("The current page is not a temporary window.");
+    //     }else{
+    //         // alert("The current page is a temporary window.");
+    //         var safariWindow = window.open(url, '_blank', 'location=yes');
+    // safariWindow.focus();
+    //         // window.open('www.apple.com', '_blank');
+    //     }
+    //   }
+    </script>
+  </head>
+  <body>
+    <h1>임시창 여부 확인하기</h1>
+    <p>현재 페이지가 임시창에서 열렸는지 확인합니다.</p>
+  </body>
+</html>
