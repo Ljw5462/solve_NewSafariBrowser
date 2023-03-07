@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type='text/javascript'>
-        var copytoclipboard = function(val){
+    <script>
+        if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MSafariShowReader) {
+          alert("The current page is not a temporary window.");
+        }else{
+            // alert("The current page is a temporary window.");
+            var copytoclipboard = function(val){
             var t = document.createElement("textarea");
             document.body.appendChild(t);
             t.value = val;
@@ -12,70 +17,16 @@
         };
         
         var inappbrowserout = function(){
+            const url = "https://www.naver.com";
+            const searchQuery = "https://" + url.replace(/^https?:\/\//,'');
             copytoclipboard(window.location.href);
             alert('URL주소가 복사되었습니다.\n\nSafari가 열리면 주소창을 길게 터치한 뒤, "붙여놓기 및 이동"를 누르면 정상적으로 이용하실 수 있습니다.');
-            location.href='safari://'; //모바일 사파리 URL스키마
-            // location.href='googlechrome://'; //모바일 크롬 URL스키마
-            // location.href='x-web-search://?bing.com';
+            location.href='x-web-search://?https://www.naver.com/';
+            window.open("https://www.w3schools.com");
 
-            // const url = 'https://www.naver.com'; // 네이버 홈페이지 URL
-            // const naverAppUrl = `naversearchapp://inappbrowser?url=${url}`; // 네이버 앱 호출 URL
-            // location.href=naverAppUrl;
+            };
 
-            // const url = 'https://www.naver.com'; // 네이버 홈페이지 URL
-            // const safariAppUrl = `x-web-search://inappbroser?url=${url}`; // 사파리 앱 호출 URL
-            // location.href = safariAppUrl; // 사파리 앱으로 URL 열기
-            
-        };
-
-      
-     
-
-
-
-//         var inappbrowserout = function() {
-//     const url = "https://www.naver.com";
-//     const kakaolinkUrl = "kakaolink://".concat("launchBrowser?url=").concat(encodeURIComponent(url));
-//     copytoclipboard(window.location.href);
-//     location.href = kakaolinkUrl;
-// };
-
-
-
-//         var inappbrowserout = function() {
-//     const url = 'https://www.naver.com';
-//     const kakaolinkUrl = 'kakaolink://browser?url=' + encodeURIComponent(url);
-//     copytoclipboard(window.location.href);
-//     window.open(kakaolinkUrl);
-// };
-
-
-
-//         var inappbrowserout = function() {
-//     const url = "https://www.naver.com";
-//     const kakaolinkUrl = "kakaolink://inappbrowser?url=" + encodeURIComponent("x-callback-safari://open?url=" + encodeURIComponent(url) + "&x-success=kakaolink%3A%2F%2F");
-//     copytoclipboard(window.location.href);
-//     location.href = kakaolinkUrl;
-// };
-
-
-
-        // var inappbrowserout = function(){
-        //     const url = "https://www.naver.com";
-        //     const searchQuery = url.replace(/^https?:\/\//,'');
-        //     const newUrl = `x-web-search://?${searchQuery}`;
-        //     location.href = newUrl;
-        
-        // const url = "https://www.naver.com";
-        // const searchQuery = "https://" + url.replace(/^https?:\/\//,'');
-        // copytoclipboard(window.location.href);
-        // alert('URL주소가 복사되었습니다.\n\nSafari가 열리면 주소창을 길게 터치한 뒤, "붙여놓기 및 이동"를 누르면 정상적으로 이용하실 수 있습니다.');
-        // location.href='x-web-search://?'+ searchQuery;
-    
-  
-
-    
-        window.onload = function(){
+            window.onload = function(){
             if(navigator.userAgent.match(/inapp|NAVER|KAKAOTALK|Snapchat|Line|WirtschaftsWoche|Thunderbird|Instagram|everytimeApp|WhatsApp|Electron|wadiz|AliApp|zumapp|iPhone(.*)Whale|Android(.*)Whale|kakaostory|band|twitter|DaumApps|DaumDevice\/mobile|FB_IAB|FB4A|FBAN|FBIOS|FBSS|SamsungBrowser\/[^1]/i)){
                 if(navigator.userAgent.match(/iPhone|iPad/i)){
                     var mobile = document.createElement('meta');
@@ -91,15 +42,15 @@
                 }
             }
         }
-       
+        }
+      }
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Success</h1>
-    <a href="https://www.example.com">Example Link</a>
+    
 </body>
 </html>
