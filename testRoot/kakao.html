@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+       if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MSafariShowReader) {
+          alert("이것은 일반 브라우저입니다.");
+          console.log('a');
+        }else{
+            alert("이것은 인앱 브라우저입니다.");
+            // var safariWindow = window.open(url, '_blank', 'location=yes');
+        }
+      }
+
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kakaoOpenSafari</title>
+</head>
+<body>
+    
+</body>
+</html>
